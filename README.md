@@ -12,3 +12,14 @@ helm/demo-app/
     ├── deployment.yaml
     └── service.yaml
 ```
+
+## Kubernetes Production Configuration
+
+The project includes production-style Kubernetes manifests for:
+
+- ConfigMap-based application configuration
+- Kubernetes Secret examples for sensitive values
+- NGINX Ingress routing
+- Horizontal Pod Autoscaling based on CPU utilization
+
+These manifests demonstrate externalized configuration, secure credential handling patterns, application routing, and workload scaling.
