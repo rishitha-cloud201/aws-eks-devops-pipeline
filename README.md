@@ -23,3 +23,27 @@ The project includes production-style Kubernetes manifests for:
 - Horizontal Pod Autoscaling based on CPU utilization
 
 These manifests demonstrate externalized configuration, secure credential handling patterns, application routing, and workload scaling.
+
+## GitOps Deployment with Argo CD
+
+The repository includes Argo CD manifests for declarative Kubernetes application delivery.
+
+The Argo CD `Application` watches the Helm chart stored in this repository and automatically synchronizes changes to the target Kubernetes namespace.
+
+### GitOps Workflow
+
+```text
+Developer Commit
+       |
+       v
+GitHub Repository
+       |
+       v
+Argo CD Detects Change
+       |
+       v
+Helm Chart Rendered
+       |
+       v
+AWS EKS Deployment
+```

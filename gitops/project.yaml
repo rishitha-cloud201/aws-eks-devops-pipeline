@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: demo-platform
+  namespace: argocd
+spec:
+  description: GitOps project for the AWS EKS demo application
+
+  sourceRepos:
+    - "https://github.com/rishitha-cloud201/aws-eks-devops-pipeline.git"
+
+  destinations:
+    - namespace: demo-app
+      server: https://kubernetes.default.svc
+
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"
