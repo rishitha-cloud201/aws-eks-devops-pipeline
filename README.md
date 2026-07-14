@@ -47,3 +47,32 @@ Helm Chart Rendered
        v
 AWS EKS Deployment
 ```
+
+## Architecture
+
+```text
+Developer
+   |
+   v
+GitHub Repository
+   |
+   +--> GitHub Actions CI/CD
+   |        |
+   |        v
+   |     Docker Image
+   |
+   +--> Terraform
+   |        |
+   |        v
+   |      AWS EKS
+   |
+   +--> Argo CD
+            |
+            v
+        Helm Chart
+            |
+            v
+     Kubernetes Deployment
+            |
+     Ingress / HPA / ConfigMap / Secret
+```
